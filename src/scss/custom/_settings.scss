@@ -1,0 +1,68 @@
+// 37. Custom
+// -----------
+
+$mobile-medium: "screen and (max-width: 640px)";
+$default-font: $body-font-family;
+
+// 色
+$color-blue: #4171bf;
+$color-blue-lighter: #deffff;
+$color-blue-soft: #1b94de;
+$color-blue-dark: #1e375e;
+$color-blue-header-dark: #294771;
+$color-blue-header-light: #afebff;
+$color-green: #62a062;
+$color-green-light: #6dbf41;
+$color-red: #ff0000;
+$color-red-pastel: #e56262;
+$color-red-dark: #a30806;
+$color-grey: #a1a1a1;
+$color-grey-bg: #f3f3f3;
+$color-grey-soft: #dadada;
+$color-grey-lighter: #eee;
+$color-grey-light: #e8e8e8;
+$color-grey-dark: #666;
+$color-black: #333;
+$color-black-dark: #231815;
+$color-white: #fff;
+$color-white-alpha: rgba($color-white, 0.3);
+$color-orange: #ffa311;
+
+$color-facebook: #3b5998;
+$color-twitter: #1da1f2;
+
+// Theming
+$color-theme-main: #336633;
+$color-theme-main-pastel: #cfeccf;
+$color-theme-main-light: #ddefe1;
+$color-theme-main-dark: darken($color-theme-main, 5);
+$color-bg-nav: #579a57;
+$color-bg-title: #579a57;
+$color-bg-button: $color-theme-main-pastel;
+$color-text-button: #274e27;
+$color-table-border: #999999;
+
+$color-main-link: #0066cc;
+$color-main-link-hover: darken($color-main-link, 5);
+
+$color-term-category: $color-blue;
+$color-term-tag: $color-blue;
+$color-phone: $color-theme-main;
+
+
+// Gradients
+$color-gradient-light: #60aa60;
+$color-gradient-dark: #568a56;
+
+$button-gradient-light: #fefefe;
+$button-gradient-dark: #e6e6e6;
+
+$button-phone-gradient-light: #b30101;
+$button-phone-gradient-dark: #e6e6e6;
+
+$button-low-gradient-light: #fefefe;
+$button-low-gradient-dark: #e6e6e6;
+
+
+$color-button-phone: #ac0101;
+$color-button-mail: #294ea2;

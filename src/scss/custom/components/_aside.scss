@@ -1,0 +1,50 @@
+/*
+** Aside
+*/
+.aside {
+
+  // widget
+  &--widget {
+    &.widget_sp_image {
+      border: none;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+
+  &--title {
+    position: relative;
+    padding: 0.4rem 1rem 0.4rem 3rem;
+  }
+
+  // sprite icon
+  &--sprite {
+    position: absolute;
+    top: 50%; left: 0;
+    margin-top: -16px;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    background-color: $color-theme-main-pastel;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+
+}
+
+
+/*
+** Front widget
+*/
+.front-widget {
+  margin-top: rem-calc(16px);
+
+  @media #{$mobile-medium} {
+    margin-top: 0.8rem;
+  }
+}

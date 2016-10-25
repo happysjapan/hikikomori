@@ -1,0 +1,38 @@
+%pagingElem {
+  margin: 0 1px;
+  padding: 6px 10px;
+  color: $color-theme-main;
+  border: 1px solid $color-theme-main;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+%pagingElemHover {
+  background-color: $color-theme-main;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+** Paging
+*/
+.paging {
+  text-align: center;
+  margin-bottom: 18px;
+
+  & span{
+    @extend %pagingElem;
+
+    &.current {
+      @extend %pagingElemHover;
+    }
+  }
+
+  & a {
+    @extend %pagingElem;
+
+    &:hover {
+      @extend %pagingElemHover;
+    }
+  }
+}

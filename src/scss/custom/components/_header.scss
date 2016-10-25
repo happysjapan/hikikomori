@@ -1,0 +1,135 @@
+.header {
+
+  &--introduction{
+    &__text {
+      @include fts(12,12);
+    }
+  }
+  &--logo {
+    margin-top: 1rem;
+
+    @media screen and #{breakpoint(medium)} {
+      margin-top: 0;
+    }
+
+    & img {
+      max-width: 60%;
+
+      @media screen and #{breakpoint(medium)} {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &--top_bar {
+    margin-bottom: 1rem;
+  }
+
+
+
+  /*
+  ** Header block phone
+  */
+  &_phone {
+    position: absolute;
+    top: 0; right: rem-calc(70px);
+    display: block;
+    padding: 0.2rem;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @media screen and #{breakpoint(medium)} {
+      position: relative;
+      right: initial;
+      padding: 1rem;
+    }
+
+    &--main {
+      padding-left: rem-calc(40px);
+
+      & p {
+        position: absolute;
+        width: 100%;
+        bottom: -24px;
+        left: 0;
+
+        margin: 0;
+        color: $color-black;
+        @include fts(8,8);
+      }
+
+      @media screen and #{breakpoint(medium)} {
+        padding-left: rem-calc(80px);
+
+        & p {
+          position: relative;
+          bottom: 0;
+          @include fts(12,12);
+        }
+      }
+    }
+
+    &--number {
+      color: $color-red;
+      @include fts(10,10);
+
+      @media screen and #{breakpoint(medium)} {
+        @include fts(20,20);
+      }
+    }
+
+
+    &--sprite {
+      position: absolute;
+      top: 50%; left: 0.5rem;
+      margin-top: -25px;
+      display: inline-block;
+      width: 70px;
+      height: 41px;
+      border-radius: 50px;
+      text-align: center;
+      padding-top: 6px;
+      zoom: 50%;
+
+      @media screen and #{breakpoint(medium)} {
+        zoom: 100%;
+      }
+    }
+  }
+
+  /*
+  ** Header block mail
+  */
+  &_mail {
+    position: relative;
+    display: none;
+    padding: 1rem;
+    border: 2px solid $color-blue-header-dark;
+    border-radius: 4px;
+    cursor: pointer;
+    color: $color-blue-header-dark;
+    background-color: $color-blue-header-light;
+    @include fts(16,16);
+    font-weight: bold;
+
+    @media screen and #{breakpoint(xmedium)} {
+      display: block;
+    }
+
+    &--main {
+      padding-left: rem-calc(60px);
+    }
+
+    &--sprite {
+      position: absolute;
+      top: 50%; left: 0.5rem;
+      margin-top: -25px;
+      display: inline-block;
+      width: 50px;
+      height: 39px;
+      text-align: center;
+      padding-top: 6px;
+    }
+  }
+}

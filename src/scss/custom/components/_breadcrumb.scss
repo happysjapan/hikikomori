@@ -1,0 +1,28 @@
+.breadcrumbs {
+
+  & li {
+  @include font-size(1.2);
+  }
+
+  & a {
+    text-transform: capitalize;
+  }
+
+  & li:not(:last-child)::after {
+    content: '>';
+    top: -1px;
+  }
+
+  // &--bottom {
+  //   @media #{$mobile-medium} {
+  //     display: none;
+  //   }
+  // }
+
+  &--top {
+    @media #{$mobile-medium} {
+      margin-top: 1.5rem;
+
+    }
+  }
+}

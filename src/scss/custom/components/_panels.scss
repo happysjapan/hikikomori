@@ -1,0 +1,98 @@
+/*
+** Default panels
+*/
+
+// term object
+%terms {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  @include border-radius(4px);
+  font-size: rem-calc(12px);
+  border: 1px solid $color-grey-soft;
+  @include fts(12,12);
+  text-decoration: none;
+  color: $color-grey;
+  padding: rem-calc(4px) rem-calc(12px);
+}
+
+
+// panel style
+.panel {
+  position: relative;
+  margin-bottom: 2rem;
+  border: 1px solid $color-grey-soft;
+  border-top: 4px solid $color-theme-main;
+
+  & > .row {
+    margin: 0;
+  }
+
+  //header
+  &--header {
+    padding: 10px 0;
+  }
+
+  // title
+  &--title {
+    @include fts(20,20);
+    font-weight: bold;
+    margin: 0;
+
+    &--link {
+      display: block;
+      padding: 0.4rem 0;
+      color: $color-black;
+
+      &:hover, &:active, &:focus {
+        text-decoration: underline;
+        color: $color-theme-main;
+      }
+    }
+  }
+
+  // Thumbnail
+  &--thumbnail {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  // Tag
+  &--tag {
+    a {
+      @extend %terms;
+      font-weight: bold;
+      margin-right: 8px;
+      color: $color-grey-dark;
+      @include setGradientBtn($color-white);
+
+      &:hover, &:active, &:focus {
+        color: $color-grey-dark;
+        @include setGradientBtn(darken($color-white, 5));
+      }
+    }
+
+  }
+
+  // description
+
+  &--button--holder {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  //voice panel
+  &--voice {
+    &__thumbnail {
+      display: block;
+      margin: 0 auto;
+    }
+    &__tag {
+    }
+    &__description {
+    }
+  }
+
+}

@@ -1,0 +1,169 @@
+%section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/*
+** Main
+*/
+.section_main {
+  @extend %section;
+
+  // block
+  &--block {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid $color-grey-light;
+
+    &--title {
+      color: $color-theme-main;
+      font-weight: bold;
+      margin-bottom: rem-calc(30px);
+      @include fts(28,28);
+    }
+
+    &--content {
+      @include fts(14,14);
+    }
+  }
+
+}
+
+
+
+/*
+** Aside
+*/
+.section_aside {
+  @extend %section;
+}
+
+.is_mobile {
+  display: none;
+  @media #{$mobile-medium} {
+    display: block;
+  }
+}
+
+
+
+/*
+** Widget
+*/
+.section_widget {
+  @extend %section;
+
+}
+
+
+.section_page {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid $color-grey-soft;
+  border-top: 4px solid $color-theme-main;
+
+  &--title {
+    color: $color-black;
+    font-weight: bold;
+    @include fts(24,24);
+
+    &.has_icon {
+      position: relative;
+      padding: 0.5rem 1rem 0.5rem 4rem;
+    }
+
+    &--sprite {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -26px;
+      display: inline-block;
+      width: 54px;
+      height: 54px;
+      background-color: $color-theme-main-light;
+      border-radius: 50px;
+      text-align: center;
+      padding-top: 6px;
+    }
+  }
+
+
+  // edition
+  &--edition {
+    margin: 20px 0;
+    .sub_title {
+      background: $color-theme-main;
+      color: $color-white;
+      @include fts(16,16);
+      padding: 8px 0 8px 12px;
+      font-weight: bold;
+    }
+    &--text {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    & h3 {
+      padding: 1rem;
+      margin: 2rem 0 0.6rem;
+      background-color: $color-theme-main;
+      color: $color-white;
+      font-weight: bold;
+      @include fts(16,16);
+    }
+    & p {
+      // width: 90%;
+      // padding: 0 1rem;
+      margin: 0 auto;
+      color: $color-black;
+      @include fts(14,20);
+    }
+  }
+}
+
+
+/*
+** Form
+*/
+.section_form {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: $color-grey-lighter;
+  border: 1px solid $color-grey-light;
+
+  &--title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @include fts(24,24);
+  }
+
+  &--main {
+    & label {
+      color: $color-grey-dark;
+      font-weight: bold;
+      @include fts(18,18);
+      line-height: 2rem;
+      & .required {
+        display: inline-block;
+        color: $color-red;
+        padding-left: 1rem;
+      }
+    }
+
+    & .wpcf7-radio span {
+      display: inline-block;
+      padding-right: 1rem;
+      font-weight: bold;
+    }
+    & .wpcf7-text{
+      box-shadow: 1px 1px 8px rgba(0,0,0,0.2) inset;
+    }
+    & .wpcf7-textarea {
+      box-shadow: 1px 1px 8px rgba(0,0,0,0.2) inset;
+    }
+  }
+}

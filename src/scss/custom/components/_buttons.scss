@@ -1,0 +1,507 @@
+.button {
+  background-color: $color-bg_button;
+
+  &:hover, &:focus, &:active {
+    background: $color-theme-main-dark;
+  }
+
+  // sprite icon
+  &--sprite {
+    position: absolute;
+    top: 50%; left: 3rem;
+    margin-top: -20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: $color-white;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3px;
+  }
+
+
+
+  /*
+  ** Banner
+  */
+  &__banner {
+    background-color: $color-white;
+    border: 1px solid $color-grey;
+    color: $color-black;
+
+    & span {
+      display: inline-block;
+      padding: 0 rem-calc(4px) rem-calc(4px);
+    }
+
+    &--holder {
+      & .columns:nth-child(1) span { border-bottom: 1px solid $color-red; }
+      & .columns:nth-child(2) span { border-bottom: 1px solid $color-orange; }
+      & .columns:nth-child(3) span { border-bottom: 1px solid $color-blue; }
+      & .columns:nth-child(4) span { border-bottom: 1px solid $color-green; }
+    }
+
+
+    &:hover, &:focus, &:active {
+      color: $color-black;
+      background-color: darken($color-white, 5);
+    }
+  }
+
+
+  /*
+  ** Panel
+  */
+  &__panel {
+    font-weight: bold;
+    color: $color-text-button;
+    padding: 8px 40px 6px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    @include fts(20,20);
+
+    .fa-caret-right {
+      @include fts(28,28);
+      padding-right: rem-calc(10px);
+      vertical-align: middle;
+      margin-top: -6px;
+    }
+
+    &--holder {
+      text-align: center;
+      margin-top: rem-calc(20px);
+    }
+  }
+
+
+  /*
+  ** front_search
+  */
+  &__front_search {
+    position: relative;
+    padding: 1rem 1rem 1rem 3.5rem;
+    margin: 0;
+    color: $color-white;
+    border: 1px solid $color-theme-main;
+    @include setGradientBtn($color-gradient-light);
+    border-radius: 4px;
+    font-weight: bold;
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      @include setGradientBtn(darken($color-gradient-light, 5));
+    }
+
+    &--icon {
+      padding: rem-calc(6px);
+      background-color: $color-white;
+      color: $color-black;
+      border-radius: 50%;
+      margin-right: rem-calc(6px);
+    }
+  }
+
+
+
+  /*
+  ** Aside
+  */
+  &__aside {
+    position: relative;
+    padding: 1rem 0.2rem 1rem 0.6rem;
+    text-align: left;
+    @include fts(24,24);
+
+    &.facebook {
+      background-color: $color-facebook;
+      &:hover, &:focus, &:active { background-color: darken($color-facebook, 5); }
+    }
+    &.twitter {
+      background-color: $color-twitter;
+      &:hover, &:focus, &:active { background-color: darken($color-twitter, 5); }
+    }
+
+    &:before {
+      position: relative;
+      top: 50%; left: 0;
+      margin-top: -22px;
+      margin-right: 5px;
+      padding: 0px 3px 1px 7px;
+      @include fts(24,24);
+      content: '▶';
+      color: $color-white;
+      border: 2px solid $color-white;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      @include fts(16,16);
+
+      &:before {
+        padding: 0px 2px 1px 5px;
+        @include fts(18,18);
+      }
+    }
+
+    @media screen and #{breakpoint(large)} {
+      @include fts(30,30);
+
+      &:before {
+        margin-right: 10px;
+        padding: 0px 3px 1px 7px;
+        @include fts(28,28);
+      }
+    }
+
+  }
+
+
+
+  /*
+  ** More
+  */
+  &__more {
+    margin: 0;
+    padding: rem-calc(8px) rem-calc(12px);
+    color: $color-white;
+    background-color: $color-theme-main;
+    border-radius: 4px;
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      background-color: darken($color-theme-main, 5);
+    }
+
+    &--holder {
+      text-align: right;
+    }
+  }
+
+
+
+  /*
+  ** button__in_widget
+  */
+  &__in_widget {
+    margin: 0;
+    padding: 0.3rem 1.6rem;
+    color: $color-theme-main;
+    background-color: $color-theme-main-light;
+    border-radius: 4px;
+
+    &:hover, &:focus, &:active {
+      color: $color-theme-main;
+      background-color: darken($color-theme-main-light, 5);
+    }
+
+    &--holder {
+      text-align: center;
+
+      &.align-right {
+        text-align: right;
+      }
+    }
+
+    .front_block_wrapper & {
+      margin-top: 1rem;
+    }
+  }
+
+    /*
+    ** New article
+    */
+    &__new-article {
+      font-weight: bold;
+      color: $color-white;
+      background-color: $color-theme-main;
+      padding: 8px 12px 6px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      @include fts(14,14);
+      &:hover {
+        background-color: lighten($color-theme-main, 10);
+      }
+
+      .fa-angle-right {
+        @include fts(20,20);
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -6px;
+      }
+
+      &--holder {
+        text-align: right;
+        margin-top: 20px;
+      }
+    }
+
+
+
+
+  /*
+  ** button__answer
+  */
+  &__answer {
+    position: relative;
+    margin: 0;
+    padding: 1rem 3.5rem 1rem 6.5rem;
+    color: $color-white;
+    font-weight: bold;
+    @include setGradientBtn($color-red-pastel);
+    border: 1px solid $color-red-dark;
+    border-radius: 4px;
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      @include setGradientBtn(darken($color-red-pastel, 5));
+    }
+
+    &--holder {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+
+
+
+  /*
+  ** button__question
+  */
+  &__question {
+    position: relative;
+    margin: 0;
+    padding: 1rem 3.5rem 1rem 6.5rem;
+    color: $color-white;
+    font-weight: bold;
+    @include setGradientBtn($color-blue-soft);
+    border: 1px solid $color-blue-dark;
+    border-radius: 4px;
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      @include setGradientBtn(darken($color-blue-soft, 5));
+    }
+
+    &--holder {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+
+
+
+  /*
+  ** button__form
+  */
+  &__form {
+    margin: 0;
+    padding: 0.6rem 5rem;
+    color: $color-white;
+    font-weight: bold;
+    @include setGradientBtn($color-gradient-dark);
+    @include fts(22,22);
+    border-radius: 4px;
+    box-shadow: 3px 4px 5px rgba(0,0,0,0.3);
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      @include setGradientBtn(darken($color-gradient-dark, 5));
+    }
+
+    &--holder {
+      text-align: center;
+    }
+
+    .search_box & {
+      font-weight: bold;
+    }
+  }
+
+
+  /*
+  ** button__toggle
+  */
+  &__toggle {
+    display: block;
+    margin: 0 auto 1rem;
+    padding: 0.2em 0.4em;
+    @include fts(20,20);
+    color: $color-black;
+    border: 1px solid $color-grey;
+    @include setGradientBtn($color-white);
+    border-radius: 4px;
+
+    &.open {
+      padding: 0.4em 0.6em;
+      @include fts(16,16);
+    }
+
+    &:hover, &:focus, &:active {
+      color: $color-black;
+      @include setGradientBtn(darken($color-white, 5));
+    }
+
+    &--holder {
+      text-align: center;
+    }
+  }
+
+
+
+  /*
+  ** button__highlight
+  */
+  &__highlight {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    @include fts(14,14);
+    line-height: 120%;
+    color: $color-white;
+    font-weight: bold;
+    border-radius: 4px;
+
+    @media screen and #{breakpoint(medium)} {
+      @include fts(12,12);
+    }
+    @media screen and #{breakpoint(large)} {
+      @include fts(16,16);
+    }
+
+    &.phone {
+      border: 1px solid darken($color-button-phone, 10);
+      @include setGradientBtn($color-button-phone);
+
+      & .button--sprite {
+        padding-top: 12px;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $color-white;
+        @include setGradientBtn(darken($color-button-phone, 5));
+      }
+    }
+
+    &.mail {
+      border: 1px solid darken($color-button-mail, 10);
+      @include setGradientBtn($color-button-mail);
+
+      & .button--sprite {
+        padding-top: 12px;
+      }
+
+      &:hover, &:focus, &:active {
+        color: $color-white;
+        @include setGradientBtn(darken($color-button-mail, 5));
+      }
+    }
+
+    &--holder {
+      margin: 1rem 0;
+    }
+  }
+
+  &--inner {
+    position: relative;
+    display: inline-block;
+    padding-left:3rem;
+
+    & .button--sprite {
+      top: 50%;
+      left: 0;
+    }
+  }
+
+
+
+  /*
+  ** button__detail
+  */
+  &__detail {
+    margin: 0;
+    color: $color-white;
+    background-color: $color-gradient-dark;
+
+    & .fa {
+      margin-right: 0.4rem;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      background-color: darken($color-gradient-dark, 5);
+    }
+  }
+
+
+
+  /*
+  ** button__checker
+  */
+  &__checker {
+    position: relative;
+    display: block;
+    margin: 0 auto 1rem;
+    padding: 1rem 2rem;
+    @include fts(14,14);
+    line-height: 120%;
+    color: $color-white;
+    font-weight: bold;
+    border-radius: 4px;
+    @include setGradientBtn($color-red);
+
+    &:hover, &:focus, &:active {
+      color: $color-white;
+      @include setGradientBtn(darken($color-red, 5));
+    }
+
+    &::before {
+      @include fts(24,24);
+      content: '>';
+      color: $color-white;
+    }
+  }
+
+
+
+}
+
+// social buttons
+  .social {
+
+    &--holder {
+      margin-bottom: 15px;
+    }
+    &--listitem {
+      display: table-cell;
+      vertical-align: top;
+      padding: 1px 5px;
+      display: none;
+
+      @media screen and #{breakpoint(medium)} {
+        display: inline-block;
+      }
+
+      & .fb_iframe_widget {
+        top: -5px;
+      }
+      & .lineButton {
+        display: inline-block;
+        margin-top: -3px;
+        vertical-align: top;
+      }
+      & .lineButtonPc {
+        position: relative;
+        top: -3px;
+      }
+    }
+
+    &--buttons {
+      @media #{$mobile-medium} {
+        display: block;
+        width: 100%;
+      }
+    }
+}

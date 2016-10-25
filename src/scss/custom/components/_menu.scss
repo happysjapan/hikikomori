@@ -1,0 +1,422 @@
+.navigation {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &--holder {
+    background-color: $color-white;
+    border-bottom: 4px solid $color-theme-main;
+    padding: 0;
+    @media #{$mobile-medium} {
+      border-bottom: none;
+    }
+    @media screen and #{breakpoint(medium)} {
+      background-color: $color-bg-nav;
+    }
+  }
+
+  @media screen and #{breakpoint(medium)} {
+    display: block;
+  }
+
+  // Menu
+  & .menu {
+    width: 100%;
+    margin: 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    &--item {
+      position: relative;
+      display: block;
+      list-style-type: none;
+      list-style-position: outside;
+      padding: 0;
+      width: 100%;
+      background-color: $color-bg-nav;
+      border-top: 1px solid $color-theme-main;
+
+      &--item:first-child {
+        border-top: none;
+      }
+
+      &--icon {
+        position: absolute;
+        top: 50%; left: 10px;
+        margin-top: -20px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        padding-top: 10px;
+        background-color: $color-white;
+        border-radius: 50%;
+        text-align: center;
+      }
+
+
+      @media screen and #{breakpoint(medium)} {
+        background-color: transparent;
+        border-top: none;
+      }
+
+      &.is-submenu-item {
+        border-top: none;
+      }
+    }
+
+    // links
+    &--item--link {
+      display: block;
+      font-family: 'Open Sans', sans-serif;
+      color: $color-white;
+      margin: 0;
+      padding: 1rem;
+      padding-left: 4rem;
+      letter-spacing: 0px;
+      line-height: 110%;
+      text-decoration: none;
+      font-weight: bold;
+      @include setTransition();
+
+      @media screen and #{breakpoint(medium)} {
+        padding: 1rem;
+      }
+
+      &:hover {
+        @include setTransition();
+      }
+      &.menu--item--link {
+        @include font-size(1.2);
+      }
+    }
+
+    &--item:first-child .menu--item--link {
+      border-top: none;
+    }
+
+    // MEDIUM
+    @media screen and #{breakpoint(medium)} {
+      position: relative;
+      margin: 0;
+      border-bottom: none;
+      top: auto;
+      display: table;
+
+      &--item {
+        display: table-cell;
+        vertical-align: top;;
+        width: auto;
+
+        &--icon {
+          position: relative;;
+          top: 0; left: 0;
+          display: block;
+          width: 50px;
+          height: 25px;
+          padding-top: 0;
+          margin: 0 auto 0.2rem;
+          background-color: $color-white;
+          border-radius: 0 0 50px 50px;
+          text-align: center;
+        }
+
+        // submenu
+        &.is-submenu-item {
+          display: block;
+          -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+          width: 100%;
+        }
+      }
+
+      &--item--link {
+        text-align: center;
+        border-right: 1px solid $color-white;
+        padding: 0 0.2rem 1rem;
+        height: 80px;
+      }
+
+      &--item:first-child .menu--item--link {
+        border-top: none;
+        border-left: 1px solid $color-white;
+      }
+    }
+  }
+  // end menu
+
+
+  // Submenu
+  & .submenu {
+    margin: 0;
+    width: 100%;
+    border: 4px solid $color-theme-main;
+    color: $color-black;
+
+    // submenu
+    & .menu--item:first-child .menu--item--link {
+      border: none;
+      border-top: none;
+    }
+
+    & .menu--item .menu--item--link {
+      position: relative;
+      color: $color-black;
+      border: none;
+      background-color: $color-white;
+      border-top: 1px solid $color-grey-dark;
+      height: auto;
+      padding: 1rem;
+      padding-left: 3rem;
+      @include font-size(1);
+
+      @media screen and #{breakpoint(medium)} {
+        padding-left: 1rem;
+      }
+
+      & .fa {
+        position: absolute;
+        top: 50%; left: 1rem;
+        margin-top: -10px;
+        font-size: 1.2rem;
+        color: $color-theme-main-dark;
+      }
+
+      &:hover {
+        background-color: darken($color-white, 5);
+      }
+    }
+
+    @media #{$mobile-medium} {
+      position: relative;
+      display: block;
+      border: none;
+      margin-left: 0;
+      //margin-right: 1.25rem;
+    }
+
+    &-item {
+      display: block;
+    }
+  }
+  // end submenu
+
+}
+// end navigation
+
+
+  // button
+  .navigation-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem 0.6rem 0.4rem;
+    text-align: center;
+    @include fts(12,12);
+    color: $color-white;
+    background-color: $color-theme-main;
+
+    &:hover, &:focus {
+      background-color: darken($color-theme-main, 10);
+      color: #fff;
+    }
+
+    & .fa {
+      display: block;
+      width: 100%;
+      text-align: center;
+      @include fts(26,26);
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      display: none;
+    }
+   }
+  // end button
+
+
+
+.dropdown.menu li.is-dropdown-submenu-parent .header_item {
+      position: relative;
+  padding-right: 0;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+
+  & span {
+    font-family: $default-font;
+    font-weight: bold;
+    @include font-size(1.2);
+    margin-bottom: -5px;
+
+    & br {
+      display: none;
+
+      &:after { content: ' '; }
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      margin-bottom: 0;
+
+      & br {
+        display: block;
+
+        &:after { content: ''; }
+      }
+    }
+  }
+
+  @media screen and #{breakpoint(medium)} {
+    padding-right: 0;
+  }
+
+
+  &::before {
+    content: "\f078";
+    position: absolute;
+    right: 50%;
+    bottom: 2px;
+    margin-right: -9px;
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
+
+
+
+
+/*
+** Footer sitemap
+*/
+.footer {
+  &--sitemap {
+    background-color: $color-theme-main-light;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  & .menu {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+
+  & .dropdown.menu > li.is-dropdown-submenu-parent > .footer_item {
+    font-family: $default-font;
+    font-weight: bold;
+    @include font-size(1.2);
+    cursor: default;
+
+    &::before {
+      content: "";
+      display: none;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.menu .sitemap {
+
+  // menu
+  &--menu {
+    display: block;
+    width: 100%;
+
+    &--item {
+      display: block;
+      width: 100%;
+      margin-bottom: rem-calc(18px);
+    }
+
+    &--link {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      @include font-size(1.2);
+      color: $color-white;
+      padding: rem-calc(10px) rem-calc(10px) rem-calc(10px) rem-calc(35px);
+      text-align: left;
+      @include setTransition();
+      font-weight: bold;
+      background-color: $color-theme-main;
+      border-bottom: 2px solid darken($color-theme-main, 10);
+
+      &--icon {
+        position: absolute;
+        top: 50%; left: rem-calc(10px);
+        margin-top: rem-calc(-10px);
+        @include font-size(2);
+      }
+
+      &:hover, &:active, &:focus {
+        background-color: lighten($color-theme-main, 10);
+        color: $color-white;
+        @include setTransition();
+      }
+    }
+  }
+
+
+  // Submenu
+  &--submenu {
+    position: relative;
+    border: 0;
+    background: transparent;
+    padding-top:0.6rem;
+
+    @media screen and #{breakpoint(medium)} {
+      display: block;
+    }
+
+    &.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+      display: none;
+    }
+
+    &--item {
+      text-align: left;
+      background-color: transparent;
+      line-height: 0;
+    }
+
+    &--link {
+      display: inline-block;
+      width: 100%;
+      @include font-size(1.2);
+      line-height: 1rem;
+      padding: 0;
+      margin: 0;
+      padding: 0.1rem 0 0.1rem 2rem;
+      color: $color-main-link;
+      background-color: transparent;
+      font-weight: bold;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      @media screen and #{breakpoint(medium)} {
+        display: inline-block;
+        @include font-size(1.2);
+
+        .is-dropdown-submenu-item & {
+          display: inline-block;
+          float: left;
+          margin-right: 1rem;
+        }
+      }
+
+    }
+  }
+
+}

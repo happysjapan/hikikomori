@@ -1,0 +1,13 @@
+/*
+** Search form
+*/
+.form {
+
+
+  &__search {
+
+    & label {
+      @include fts(14,14);
+    }
+  }
+}

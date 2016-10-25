@@ -1,0 +1,94 @@
+.detail {
+    border: 1px solid $color-grey-soft;
+    border-top: 4px solid $color-theme-main;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 0.6rem 1rem;
+    @media #{$mobile-medium} {
+      padding: 0;
+    }
+    &--content {
+      padding-bottom: 20px;
+    }
+    &--single_title {
+      @include fts(26,26);
+      margin: 14px 0;
+      font-weight: bold;
+    }
+    &--tag {
+      margin-top: 10px;
+      a {
+       @extend %terms;
+       font-weight: bold;
+       margin-right: 8px;
+       @include setGradientBtn($color-white);
+
+       &:hover, &:active, &:focus {
+         color: $color-grey;
+         @include setGradientBtn(darken($color-white, 5));
+       }
+     }
+   }
+   &--img {
+     display: block;
+     margin: 0 auto;
+   }
+
+   .sub_title {
+     background: $color-theme-main;
+     color: $color-white;
+     @include fts(16,16);
+     padding: 8px 0 8px 12px;
+     font-weight: bold;
+   }
+   &--text {
+     padding-right: 10px;
+     padding-left: 10px;
+   }
+
+   &--voice-header {
+     padding: 20px 20px 0 20px;
+   }
+
+   &--voice-image {
+     margin-top: 10px;
+   }
+
+
+
+   /*
+   ** Clinic detail page
+   */
+   &--clinic_description {
+     background: #ececec;
+     padding: 10px;
+     margin-bottom: 20px;
+   }
+   &--clinic{
+     &__title {
+       background-color: $color-theme-main;
+       color: $color-white;
+       padding: 10px;
+       font-weight: bold;
+       @include fts(20,20);
+       @media #{$mobile-medium} {
+         @include fts(18,18);
+       }
+     }
+     &__text {
+       padding: 15px;
+       @media #{$mobile-medium} {
+         @include fts(14,14);
+       }
+     }
+   }
+   &--is_mobile {
+     display:none;
+     @media #{$mobile-medium} {
+       display: block;
+       margin-top: 16px;
+     }
+   }
+
+
+}
