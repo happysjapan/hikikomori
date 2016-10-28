@@ -4,7 +4,6 @@
   $queried_object = get_queried_object();
   $args = array( 'parent' => $queried_object->term_id );
   $cat_list = get_categories( $args );
-  $current_cat = null;
 
   foreach ($cat_list as $cat) {
     if( $cat->slug != $queried_object->slug) {
@@ -35,13 +34,11 @@
 
       <div class="row">
         <div class="list_tags--holder columns small-12">
-          <ul class="list_tag clearfix">
-            <?php foreach ($tags as $tag) { ?>
-              <li class="list_tag--item">
-                <a class="list_tag--link" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
-              </li>
-            <?php } ?>
-          </ul>
+          <!-- [ #search ] -->
+          <section class="searchArea">
+            <?php get_template_part( 'includes/searchbox-clinic' ); ?>
+          </section>
+          <!-- [ /#search ] -->
         </div>
       </div>
 

@@ -96,6 +96,21 @@ if ( function_exists('register_sidebar') ) {
  /*	Custom post type _ add Hikikomori info
  /*-------------------------------------------*/
 
+
+ // Add voice category
+ register_taxonomy(
+	 'type',
+	 'post',
+	 array(
+		 'hierarchical' => true,
+		 'update_count_callback' => '_update_post_term_count',
+		 'label' => $knowledgeLabel._x(' Type','admin menu'),
+		 'singular_label' => $knowledgeLabel._x(' Type','admin menu'),
+		 'public' => true,
+		 'show_ui' => true,
+	 )
+ );
+
  add_post_type_support( 'knowledge', 'front-end-editor' );
 
  add_action( 'init', 'happys_knowledge_create_post_type', 0 );

@@ -1,15 +1,11 @@
 <?php
 $queried_object = get_queried_object();
 
-$categories_parent = get_category_by_slug('clinic');
-$categories_parent_id = $categories_parent->term_id;
-
-
-$args = array(
-  'parent' => $categories_parent_id,
-  'orderby' => 'menu_order'
-);
-$categories = get_categories( $args );
+$categories = get_categories( );
+$types = get_terms( array(
+   'taxonomy' => 'type',
+   'hide_empty' => false
+) );
 $tags = get_tags();
 ?>
 
@@ -23,10 +19,10 @@ $tags = get_tags();
 
     <!-- Search box -->
     <div class="columns small--12 medium-6 ">
-      <form method="get" id="search_form" class="form__search" action="<?php echo home_url(); ?>/clinic">
+      <form method="get" id="search_form" class="form__search" data-url="<?php echo home_url(); ?>/" action="<?php echo home_url(); ?>/<?php echo wp_specialchars($category_name, 1); ?>">
         <div class="select-box">
           <label for ="searchCat" class="search--form--label">▼ 選択してください
-          <select id="searchCat" name="category_name" class="search--form--select">
+          <select id="searchCat" name="region" class="search--form--select">
             <option value="">お住まいの地域</option>
             <?php
 
@@ -44,13 +40,13 @@ $tags = get_tags();
         </div>
 
         <div class="select-box">
-          <label for ="searchTag" class="search--form--label">▼ 選択してください
-          <select id="searchTag" name="tag" class="search--form--select">
+          <label for ="searchType" class="search--form--label">▼ 選択してください
+          <select id="searchType" name="type" class="search--form--select">
             <option value="">ご相談の種類</option>
             <?php
 
-              foreach ($tags as $tag_elem) {
-                if( wp_specialchars($tag, 1) == $tag_elem->slug ) {
+              foreach ($types as $tag_elem) {
+                if( wp_specialchars($type, 1) == $tag_elem->slug ) {
                   echo '<option value="'.$tag_elem->slug.'" selected>'.$tag_elem->name.'</option>';
                 }
                 else {

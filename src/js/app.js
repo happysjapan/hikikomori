@@ -48,4 +48,12 @@ $(document).ready(function(){
     $("#js_checker").hide();
   });
 
+
+  $('#searchCat').change(function(){
+    var region = $(this).val();
+    var action = $('#search_form').attr('data-url')+region;
+
+    $('#search_form').attr('action', action);
+  });
+
 });

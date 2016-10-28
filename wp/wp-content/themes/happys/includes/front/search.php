@@ -7,7 +7,7 @@
         <div class="columns small-12 medium-7">
           <div class="row front_search--left">
             <div class="columns small-12 medium-shrink">
-              <a href="#" class="button button__front_search">
+              <a href="<?php echo get_permalink(get_page_by_path('clinics')); ?>" class="button button__front_search">
                 <i class="main_title--sprite" aria-hidden="true"><span class="sprite icon_search"></span></i>全国ひきこもり/家庭内暴力相談窓口を探す
               </a>
             </div>

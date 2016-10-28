@@ -73,11 +73,11 @@
 </footer>
 
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation-sites/dist/foundation.min.js"></script>
-
-<script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
 <!--
-<script src="http://localhost:8888/HAPPYS/hikikomori/src/js/app.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
 -->
+<script src="http://localhost:8888/HAPPYS/hikikomori-happys/src/js/app.js"></script>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

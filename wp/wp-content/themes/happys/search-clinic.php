@@ -1,34 +1,39 @@
 <?php
 $post_search = $_GET['s'];
-$post_category_slug = $_GET['category_name'];
-$post_tag_slug = $_GET['tag'];
+$post_category_slug = $_GET['region'];
+$post_type_slug = $_GET['type'];
 
 global $query_string;
 parse_str($query_string, $query_array);
 
+$post_args = array(
+  'post_type' => 'post',
+  'post_status' => 'publish',
+  'orderby' => 'date',
+  'category_name' => $post_category_slug,
+  'posts_per_page' => 5,
+  'has_password' => false,
+  'paged' => $paged,
+);
+
 if( isset($post_search)) {
-  $post_args = array(
-    's'             => $post_search,
-    'post_type'     => 'post',
-    'post_status' => 'publish',
-    'orderby' => 'date',
-    'category_name' => $post_category_slug,
-    'tag'              => $post_tag_slug,
-    'posts_per_page'   => 5,
-    'has_password' => false,
-    'paged' => $paged,
+  $post_args_search = array(
+    's' => $post_search,
   );
+  $post_args = array_merge($post_args_search, $post_args);
 }
-else {
-  $post_args = array(
-  	'post_type'        => 'post',
-    'post_status' => 'publish',
-    'orderby' => 'date',
-    'category_name' => $post_category_slug,
-    'posts_per_page'   => 5,
-    'has_password' => false,
-    'paged' => $paged
+
+if( isset($post_type_slug) && $post_type_slug != "" ){
+  $post_args_type = array(
+    'tax_query' => array(
+  		array(
+  			'taxonomy' => 'type',
+  			'field'    => 'slug',
+  			'terms'    => $post_type_slug,
+  		),
+    ),
   );
+  $post_args = array_merge($post_args, $post_args_type);
 }
 
 $merged_args = array_merge($query_array, $post_args);

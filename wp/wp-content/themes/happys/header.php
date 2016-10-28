@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo happys_getCssAssets(); ?>">
     <!--
-    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/hikikomori/src/css/app.css">
+    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/hikikomori-happys/src/css/app.css">
     -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic">
