@@ -23,6 +23,17 @@ li{
 }
 
 
+.seo {
+  position: absolute;
+  height: 0;
+  width: 0;
+  line-height: 0;
+  font-size: 0;
+  text-indent: -999%;
+  min-width: 0 !important;
+}
+
+
 .table-bordered {
   tbody {
     border: 1px solid $color-table-border;

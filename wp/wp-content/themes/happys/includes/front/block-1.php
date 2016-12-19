@@ -84,7 +84,7 @@ $domestic_link = get_term_link('domestic-violence', 'knowledge-cat');
                         <?php } ?>
                         <h4 class="aside--item--title"><?php echo $domestic->post_title; ?></h4>
                         <div class="button__in_widget--holder">
-                          <button class="button button__in_widget" type="button" name="button">▶ 詳細</button>
+                          <span class="button button__in_widget">▶ 詳細</span>
                         </div>
                       <?php }
                       } ?>

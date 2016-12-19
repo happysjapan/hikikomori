@@ -243,8 +243,8 @@ if ( function_exists('register_sidebar') ) {
  		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
  		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
- 		$class_names = ' class="'. esc_attr( $class_names ) . '"';
- 		$output .= $indent . '<li class="menu--item" id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+		$class_names = esc_attr( $class_names );
+ 		$output .= $indent . '<li class="menu--item '.$class_names.'" id="menu-item-'. $item->ID . '"' . $value .'>';
 
  		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
  		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -328,16 +328,16 @@ if ( function_exists('register_sidebar') ) {
 		 $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
 		 $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-		 $class_names = ' class="'. esc_attr( $class_names ) . '"';
+		 $class_names = esc_attr( $class_names );
 
 		 if( $depth == 0 ){
-			 $output .= $indent . '<li class="sitemap--menu--item" id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+			 $output .= $indent . '<li class="sitemap--menu--item '.$class_names.'" id="menu-item-'. $item->ID . '"' . $value .'>';
 		 }
 		 else if( $depth == 1 ) {
-			 $output .= $indent . '<li class="sitemap--submenu--item" id="submenu-item-'. $item->ID . '"' . $value . $class_names .'>';
+			 $output .= $indent . '<li class="sitemap--submenu--item '.$class_names.'" id="submenu-item-'. $item->ID . '"' . $value .'>';
 		 }
 		 else {
-			 $output .= $indent . '<li class="sitemap--thirdmenu--item" id="submenu-item-'. $item->ID . '"' . $value . $class_names .'>';
+			 $output .= $indent . '<li class="sitemap--thirdmenu--item '.$class_names.'" id="submenu-item-'. $item->ID . '"' . $value .'>';
 		 }
 
 

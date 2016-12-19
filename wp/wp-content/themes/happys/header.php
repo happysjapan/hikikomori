@@ -1,19 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="ja">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('title'); ?></title>
 
-    <link rel="icon"
-      type="svg"
-      href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
-
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo happys_getCssAssets(); ?>">
     <!--
-    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/hikikomori-happys/src/css/app.css">
+    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/hikikomori/src/css/app.css">
     -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic">
@@ -31,7 +28,7 @@
 
   </head>
   <body>
-    <div id="top" class="header">
+    <header id="top" class="header">
       <div class="row">
         <div class="header--introduction columns small-12">
           <p class="header--introduction__text"><?php the_field('front_top_text'); ?></p>
@@ -40,13 +37,12 @@
           <div class="header--top_bar row">
             <div class="columns shrink">
               <!-- logo -->
-              <div class="header--logo">
-                <a class="site-title--link" href="<?php echo home_url(); ?>" title="全国ひきこもり・家庭内暴力相談窓口" rel="home">
-                  <h2 class="site-title">
-                    <img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/site_logo.png" alt="ひきこもり" width="180" height="37" data-template="<?php echo home_url(); ?>">
-                  </h2>
+              <h1 class="header--logo">
+                <a class="site-title" href="<?php echo home_url(); ?>" title="全国ひきこもり・家庭内暴力相談窓口" rel="home">
+                  <img id="logo" src="<?php echo get_template_directory_uri(); ?>/images/site_logo.png" alt="ひきこもり" width="180" height="37" data-template="<?php echo home_url(); ?>">
                 </a>
-              </div>
+                <strong class="seo">全国ひきこもり・家庭内暴力相談窓口</strong>
+              </h1>
             </div>
 
             <div class="columns">
@@ -61,41 +57,36 @@
                   </a>
                 </div>
                 <div class="columns shrink">
-                    <a class="header_mail" href="<?php echo home_url(); ?>/contact/">
-                      <i class="header_mail--sprite" aria-hidden="true"><span class="sprite icon_mail"></span></i>
-                      <div class="header_mail--main">
-                        メールで<br>
-                        ご相談
-                      </div>
-                    </a>
-                  </div>
+                  <a class="header_mail" href="<?php echo home_url(); ?>/contact/">
+                    <i class="header_mail--sprite" aria-hidden="true"><span class="sprite icon_mail"></span></i>
+                    <div class="header_mail--main">
+                      メールで<br>
+                      ご相談
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
+    </header>
 
-
-      <div class="navigation--holder">
-        <div class="row">
-          <div class="columns">
-            <a id="nav_button" class="navigation-button"><i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
-            <nav id="navigation" class="navigation">
-              <?php
-              $args = array(
-               'theme_location' => 'navigation',
-               'container' => false,
-               'items_wrap' => '<ul class="dropdown menu" data-dropdown-menu>%3$s</ul>',
-               'walker' => new description_walker()
-              );
-              wp_nav_menu( $args ) ;
-              ?>
-            </nav>
-          </div>
+    <div class="navigation--holder">
+      <div class="row">
+        <div class="columns">
+          <a id="nav_button" class="navigation-button"><i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
+          <nav id="navigation" class="navigation">
+            <?php
+            $args = array(
+             'theme_location' => 'navigation',
+             'container' => false,
+             'items_wrap' => '<ul class="dropdown menu" data-dropdown-menu>%3$s</ul>',
+             'walker' => new description_walker()
+            );
+            wp_nav_menu( $args ) ;
+            ?>
+          </nav>
         </div>
       </div>
-
-
     </div>

@@ -37,6 +37,7 @@
     @include fts(20,20);
     font-weight: bold;
     margin: 0;
+    padding-left: 0.9375rem;
 
     &--link {
       display: block;
