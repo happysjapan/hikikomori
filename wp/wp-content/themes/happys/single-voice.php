@@ -23,12 +23,11 @@ foreach ($categories as $cat) {
   <div class="row">
 
     <main role="main" class="section_main columns small-12 medium-9">
-      <div class="detail">
-        <div class="detail--content">
-          <div class="detail--voice-header">
-            <div class="row">
-              <section class="columns small-3">
-                <div class="detail--voice-image">
+      <div class="detail detail--content">
+        <header class="detail--voice-header">
+          <div class="row">
+            <div class="columns small-3">
+              <div class="detail--voice-image">
                 <?php $topimage = get_field('default_thumbnail'); ?>
                 <?php if( !$topimage ){
                   $topimage_url = get_template_directory_uri().'/images/ad_thumbnail.png';
@@ -38,17 +37,16 @@ foreach ($categories as $cat) {
 
                 <img class="detail--img" src="<?php echo $topimage_url; ?>" alt="<?php the_title(); ?>" />
               </div>
-              </section>
-              <div class="columns small-9">
-                <h3 class=detail--single_title><?php the_title(); ?></h3>
-              </div>
             </div>
-
-            <div class="detail--tag">
-              <?php echo get_the_term_list($post->ID,'voice_tag'); ?>
-            </div>
+            <section class="columns small-9">
+              <h1 class=detail--single_title><?php the_title(); ?></h1>
+            </section>
           </div>
-        </div>
+
+          <div class="detail--tag">
+            <?php echo get_the_term_list($post->ID,'voice_tag'); ?>
+          </div>
+        </header>
 
         <?php
         if (have_rows("default_details")) {
@@ -65,11 +63,11 @@ foreach ($categories as $cat) {
       <!-- Related article -->
       <div class="row">
         <div class="columns">
-          <div class="detail related">
-            <h3 class="related--title">
+          <section class="detail related">
+            <h2 class="related--title">
               <i class="related--sprite" aria-hidden="true"><span class="sprite icon_link"></span></i>
               関連記事新着
-            </h3>
+            </h2>
             <?php
             $custom_args = array(
               'post_type' => $post_type,
@@ -90,7 +88,7 @@ foreach ($categories as $cat) {
               <?php foreach ($related_posts as $related) { ?>
                 <li class="related--item small-12 columns">
                   <a class="related--link" href="<?php echo get_the_permalink($related->ID); ?>" title="<?php echo get_the_permalink($related->ID); ?>">
-                    <h4 class="related--item--title"><?php echo $related->post_title; ?></h4>
+                    <h3 class="related--item--title"><?php echo $related->post_title; ?></h3>
                   </a>
                 </li>
               <?php } ?>
@@ -99,8 +97,7 @@ foreach ($categories as $cat) {
             <div class="button__new-article--holder">
               <a class="aside--more button button__more" href="<?php echo $voice_link; ?>" title="もっと見る"><i class="fa fa-chevron-right" aria-hidden="true"></i>もっと見る</a>
             </div>
-
-          </div>
+          </section>
         </div>
       </div>
       <!-- end of Related article -->

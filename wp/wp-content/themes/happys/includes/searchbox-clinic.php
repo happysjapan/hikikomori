@@ -11,7 +11,6 @@ $tags = get_tags();
 
 <div class="search_box front_search">
   <div class="row front_search--left">
-
     <!-- Map -->
     <div class="columns small-12 medium-6 front_search--map">
       <img src="<?php echo get_template_directory_uri(); ?>/images/search-map.png" alt="全国ひきこもり/家庭内暴力相談窓口を探す" />
@@ -69,6 +68,5 @@ $tags = get_tags();
         </div>
       </form>
     </div>
-
   </div>
 </div>

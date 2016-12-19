@@ -14,16 +14,16 @@ get_header(); ?>
 <div class="wrapper">
 
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		<div class="row">
-			<div class="section_form columns medium-10 medium-offset-1">
-				<h2 class="section_form--title"><?php the_title(); ?></h2>
+		<main class="row">
+			<section class="section_form columns medium-10 medium-offset-1">
+				<h1 class="section_form--title"><?php the_title(); ?></h1>
 				<div class="row">
 					<div class="section_form--main columns small-12 medium-10 medium-offset-1 large-8 large-offset-2">
 						<?php the_content(); ?>
 					</div>
 				</div>
-		 	</div>
-		</div>
+		 	</section>
+		</main>
 	<?php endwhile; ?>
 
 	<div class="row breadcrumbs--bottom">

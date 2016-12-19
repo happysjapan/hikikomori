@@ -1,10 +1,7 @@
 <article id="post-<?php the_ID(); ?>" class="row">
   <div class="columns">
-    <div class="panel">
-
-      <header class="panel--header">
-        <h2 class="panel--title"><a href="<?php the_permalink(); ?>"  title="<?php the_title(); ?>" class="panel--title--link"><?php the_title(); ?></a></h2>
-      </header>
+    <section class="panel">
+      <h2 class="panel--title panel--header"><a href="<?php the_permalink(); ?>"  title="<?php the_title(); ?>" class="panel--title--link"><?php the_title(); ?></a></h2>
 
       <div class="panel--content row">
         <div class="small-12 medium-6 columns">
@@ -51,6 +48,6 @@
         </div>
       </footer>
 
-    </div>
+    </section>
   </div>
 </article>

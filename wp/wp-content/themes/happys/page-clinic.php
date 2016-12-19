@@ -50,9 +50,9 @@ get_header();
       <div class="row">
         <div class="list_tags--holder columns small-12">
           <!-- [ #search ] -->
-          <section class="searchArea">
+          <div class="searchArea">
             <?php get_template_part( 'includes/searchbox-clinic' ); ?>
-          </section>
+          </div>
           <!-- [ /#search ] -->
         </div>
       </div>

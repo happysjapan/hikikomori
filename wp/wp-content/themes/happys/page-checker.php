@@ -23,12 +23,9 @@ get_header(); ?>
 
 					<h1 class="section_page--title has_icon"><i class="section_page--title--sprite" aria-hidden="true"><span class="sprite icon_checker"></span></i><?php the_title(); ?></h1>
 
-					<div class="section_page--edition">
-						<h3 class="sub_title"><?php echo get_field('checker_sub_title'); ?></h3>
-					</div>
-					<div class="section_page--edition">
+					<section class="section_page--edition">
 						<?php the_content(); ?>
-					</div>
+					</section>
 
 					<?php get_template_part( 'includes/checker' ); ?>
 				</div>

@@ -1,10 +1,7 @@
 <div class="social--holder">
 	<ul class="social--list">
 		<li class="google social--listitem">
-			<!-- Placez cette balise où vous souhaitez faire apparaître le gadget Bouton +1. -->
 			<div class="g-plusone" data-annotation="none"></div>
-
-			<!-- Placez cette ballise après la dernière balise Bouton +1. -->
 			<script type="text/javascript">
 			  window.___gcfg = {lang: 'fr'};
 
@@ -29,22 +26,21 @@
 		</li>
 		<li class="bookmark social--listitem">
 			<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-			<!-- <a id="bookmarkme" href="<?php the_permalink(); ?>" rel="sidebar" title="bookmark this page">Bookmark</a> -->
 			<script type="text/javascript">
-			    jQuery(function() {
-			        jQuery('#bookmarkme').click(function() {
-			            if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
-			                window.sidebar.addPanel(document.title,window.location.href,'');
-			            } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
-			                window.external.AddFavorite(location.href,document.title);
-			            } else if(window.opera && window.print) { // Opera Hotlist
-			                this.title=document.title;
-			                return true;
-			            } else { // webkit - safari/chrome
-			                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
-			            }
-			        });
-			    });
+		    jQuery(function() {
+	        jQuery('#bookmarkme').click(function() {
+            if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+                window.sidebar.addPanel(document.title,window.location.href,'');
+            } else if(window.external && ('AddFavorite' in window.external)) { // IE Favorite
+                window.external.AddFavorite(location.href,document.title);
+            } else if(window.opera && window.print) { // Opera Hotlist
+                this.title=document.title;
+                return true;
+            } else { // webkit - safari/chrome
+                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+            }
+	        });
+		    });
 			</script>
 		</li>
 		<li class="line social--listitem">
