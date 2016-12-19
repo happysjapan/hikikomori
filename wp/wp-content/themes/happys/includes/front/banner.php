@@ -1,7 +1,6 @@
-<div class="banner">
-  <img class="banner--image" src="<?php echo get_field('front_banner_image')['sizes']['large'];?>" alt="引きこもり、家庭内暴力、どこに相談すればいいんだろう？" />
+<section class="banner">
   <h2 class="banner--title">引きこもり、家庭内暴力、どこに相談すればいいんだろう？</h2>
-
+  <img class="banner--image" src="<?php echo get_field('front_banner_image')['sizes']['large'];?>" alt="引きこもり、家庭内暴力、どこに相談すればいいんだろう？" />
 
   <div class="banner--inner">
     <div class="button__banner--holder row">
@@ -19,4 +18,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

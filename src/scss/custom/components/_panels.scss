@@ -52,6 +52,11 @@
   }
 
   // Thumbnail
+
+  &--figure {
+    margin: 0;
+  }
+
   &--thumbnail {
     display: block;
     width: 100%;
